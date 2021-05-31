@@ -1,0 +1,8 @@
+name = "Hackurat"
+license = "MIT"
+licenselink = "https://github.com/hackundsoehne/hackurat/blob/master/LICENSE"
+description = "Hack und Söhne organisation website theme"
+homepage = "https://github.com/hackundsoehne/hackurat"
+tags = []
+features = []
+min_version = "0.41.0"
