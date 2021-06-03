@@ -4,7 +4,8 @@
             {{ $logo_alt := .Site.Params.header.logo.alt }}
             {{ $logo_src := .Site.Params.header.logo.src }}
             {{ $logo_height := .Site.Params.header.logo.height }}
-            <img alt="{{ $logo_alt }}" src="{{ $logo_src }}" height="{{ $logo_height }}" />
+            {{ $logo := resources.Get $logo_src }}
+            <img alt="{{ $logo_alt }}" src="{{ $logo.RelPermalink }}" height="{{ $logo_height }}" />
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
