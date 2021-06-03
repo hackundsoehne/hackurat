@@ -1,9 +1,11 @@
 $blood: #a63324;
 $steel: #2d2d2d;
+$bones: #f6f6f6;
 
 $theme-colors: (
     blood: $blood,
     steel: $steel,
+    bones: $bones,
 );
 
 @import "../vendor/bootstrap/scss/bootstrap";
