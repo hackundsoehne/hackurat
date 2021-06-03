@@ -1,0 +1,26 @@
+<footer class="border-top py-5">
+    <div class="container">
+        <p class="text-center text-uppercase fs-5 fw-bold">{{ .Site.Params.footer.organisation }}</p>
+
+        <p class="text-center text-uppercase fw-light">{{ .Site.Params.footer.slogan }}</p>
+
+        <div class="nav justify-content-center">
+            {{ range .Site.Menus.social }}
+            {{ $text := print .Name | safeHTML }}
+            <a class="nav-link" href="{{ .URL }}">
+                {{ $path := print "icons/" .Params.icon ".svg" }}
+                <div class="text-muted">
+                    {{ partial $path (dict "size" "24")}}
+                </div>
+            </a>
+            {{ end }}
+        </div>
+
+        <nav class="nav justify-content-center mt-3">
+            {{ range .Site.Menus.footer }}
+            {{ $text := print .Name | safeHTML }}
+            <a class="nav-link text-muted" href="{{ .URL }}">{{ $text }}</a>
+            {{ end }}
+        </nav>
+    </div>
+</footer>
