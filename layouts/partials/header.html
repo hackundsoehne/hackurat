@@ -20,7 +20,7 @@
                 {{ $active = or $active (eq $.Section (lower .Name)) }}
                 <li class="nav-item">
                     {{ $text := print .Name | safeHTML }}
-                    <a class="nav-link fs-5 fw-bold {{ if $active }}active{{ end }}" href="{{ .URL }}">{{ $text }}</a>
+                    <a class="nav-link fs-5 {{ if $active }}active{{ end }}" href="{{ .URL }}">{{ $text }}</a>
                 </li>
                 {{ end }}
             </ul>
