@@ -7,7 +7,7 @@
         <div class="nav justify-content-center">
             {{ range .Site.Menus.social }}
             {{ $text := print .Name | safeHTML }}
-            <a class="nav-link" href="{{ .URL }}">
+            <a class="nav-link" href="{{ .URL }}" target="_blank">
                 {{ $path := print "icons/" .Params.icon ".svg" }}
                 <div class="text-muted">
                     {{ partial $path (dict "size" "24")}}
