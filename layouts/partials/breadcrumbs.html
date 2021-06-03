@@ -1,0 +1,22 @@
+<div class="border-bottom">
+    <div class="container py-5 text-center">
+        <p class="text-uppercase display-6">{{ .Title }}</p>
+
+        <p class="text-muted mb-0">
+            <a class="text-muted text-decoration-none" href="/">Home</a>
+            {{ $path := (trim .RelPermalink "/") }}
+            {{ $parts := (split $path "/") }}
+
+            {{ range $index, $part := $parts }}
+
+            {{ $isLast := eq (add $index 1) (len $parts) }}
+            {{ $currentPath := (delimit (first (add $index 1) $parts) "/") }}
+
+            / <a class="text-decoration-none {{ if $isLast }} text-steel{{ end }}" href="/{{ $currentPath }}">{{
+                humanize $part
+                }}</a>
+
+            {{ end }}
+        </p>
+    </div>
+</div>
