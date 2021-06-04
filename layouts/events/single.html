@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+
+<div class="container">
+    <div class="row py-5">
+        <div class="col-12 col-lg-8 order-2 order-lg-1">
+            {{ .Content }}
+        </div>
+        <div class="col-12 col-lg-4 order-1 order-lg-2">
+            <p class="fs-3">
+                When?<br>
+                <span class="text-muted">{{ .Date.Format "3. Jan 2006, 15:04" }}</span>
+            </p>
+
+            {{ if isset .Params "where" }}
+            <p class="fs-3">
+                Where?<br>
+                <span class="text-muted">{{ .Params.where }}</span>
+            </p>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ end }}
