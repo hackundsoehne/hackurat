@@ -4,7 +4,7 @@
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 text-center">
         <a class="text-blood text-decoration-none" target="_blank" href="{{ .url }}">
             {{ $image := resources.Get .image }}
-            <img class="img-fluid" alt="{{ .name }}" src="{{ $image.Permalink }}" />
+            <img class="img-fluid" alt="{{ .name }}" src="{{ $image.RelPermalink }}" />
             <div class="fs-5 fw-light mt-3">{{ .name }}</div>
         </a>
     </div>
