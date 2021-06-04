@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+
+<div class="container">
+    {{ $active := where .Site.Data.team.team "active" true }}
+    {{ $alumni := where .Site.Data.team.team "active" false }}
+
+    <div class="my-5">
+        <h3 class="mb-4 display-6">Active</h3>
+        {{ partial "members.html" $active }}
+    </div>
+
+    <div class="my-5">
+        <h3 class="mb-4 display-6">Alumni</h3>
+        {{ partial "members.html" $alumni }}
+    </div>
+</div>
+
+{{ end }}
