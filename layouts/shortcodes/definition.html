@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-12 col-lg-8 mx-auto text-center lead">
+        <p class="display-6">
+            {{ .Get "word" }}
+        </p>
+        <p class="text-muted fst-italic">
+            [{{ .Get "phonetic" }}]<br>
+            ({{ .Get "kind" }})
+        </p>
+        <div>
+            {{ .Inner | markdownify }}
+        </div>
+    </div>
+</div>
