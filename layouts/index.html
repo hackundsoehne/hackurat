@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+<div class="py-3 py-lg-5 bg-bones">
+    <div class="container text-center">
+        <div class="my-3 my-lg-5">
+            {{ $logo_height := .Params.logo_height }}
+            {{ $logo_alt := .Params.logo_alt }}
+            {{ $logo_src := .Params.logo_src }}
+            {{ $logo := resources.Get $logo_src }}
+            <img class="img-fluid" style="max-height: {{ $logo_height }}" alt="{{ $logo_alt }}" src="{{ $logo.RelPermalink }}" />
+        </div>
+
+        <div class="my-3 my-lg-5 display-5">
+            {{ $middot := "<span class='fw-bold'> &middot; </span>" }}
+            {{ delimit .Params.logo_topics $middot }}
+        </div>
+    </div>
+</div>
+
+<div>
+    {{ .Content }}
+</div>
+
+<div class="bg-bones py-5">
+    <div class="container">
+        <h3 class="display-6 text-center mb-5">Latest events</h3>
+        <div class="row g-4 row-cols-1 row-cols-md-3">
+            {{ $events := where .Site.RegularPages "Section" "events" }}
+            {{ $events := $events | first 3}}
+
+            {{ range $events }}
+            <div class="col">
+                {{ partial "event-card.html" . }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ end }}
