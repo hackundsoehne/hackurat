@@ -46,7 +46,7 @@
             {{ range $partners }}
             {{ $logo := resources.Get .logo }}
 
-            <div class="col text-center">
+            <div class="col text-center d-flex flex-column justify-content-center">
                 <div class="mx-3">
                     <a href="{{ .url }}" target="_blank">
                         <img class="img-fluid" alt="{{ .name }}" src="{{ $logo.RelPermalink }}" />
