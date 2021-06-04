@@ -12,9 +12,15 @@
             {{ $isLast := eq (add $index 1) (len $parts) }}
             {{ $currentPath := (delimit (first (add $index 1) $parts) "/") }}
 
-            / <a class="text-decoration-none {{ if $isLast }} text-steel{{ end }}" href="/{{ $currentPath }}">{{
-                humanize $part
-                }}</a>
+            {{ if $isLast }}
+            / <a class="text-decoration-none text-steel" href="/{{ $currentPath }}">
+                {{ $.Title }}
+            </a>
+            {{ else }}
+            / <a class="text-decoration-none text-muted" href="/{{ $currentPath }}">
+                {{ humanize $part }}
+            </a>
+            {{ end }}
 
             {{ end }}
         </p>
