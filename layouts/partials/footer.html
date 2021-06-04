@@ -5,10 +5,9 @@
         <p class="text-center text-uppercase fw-light">{{ .Site.Params.footer.slogan }}</p>
 
         <div class="nav justify-content-center">
-            {{ range .Site.Menus.social }}
-            {{ $text := print .Name | safeHTML }}
+            {{ range .Site.Params.social_menu }}
             <a class="nav-link" href="{{ .URL }}" target="_blank">
-                {{ $path := print "icons/" .Params.icon ".svg" }}
+                {{ $path := print "icons/" .icon ".svg" }}
                 <div class="text-muted">
                     {{ partial $path (dict "size" "24")}}
                 </div>
@@ -19,7 +18,7 @@
         <nav class="nav justify-content-center mt-3">
             {{ range .Site.Menus.footer }}
             {{ $text := print .Name | safeHTML }}
-            <a class="nav-link text-muted" href="{{ .URL }}">{{ $text }}</a>
+            <a class="nav-link text-muted" href="{{ .URL | relLangURL }}">{{ $text }}</a>
             {{ end }}
         </nav>
     </div>

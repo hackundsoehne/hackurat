@@ -3,7 +3,7 @@
         <p class="text-uppercase display-6">{{ .Title }}</p>
 
         <p class="text-muted mb-0">
-            <a class="text-muted text-decoration-none" href="/">Home</a>
+            <a class="text-muted text-decoration-none" href="{{ .Site.Home.RelPermalink | relLangURL }}">Home</a>
             {{ $path := (trim .RelPermalink "/") }}
             {{ $parts := (split $path "/") }}
 
@@ -12,6 +12,7 @@
             {{ $isLast := eq (add $index 1) (len $parts) }}
             {{ $currentPath := (delimit (first (add $index 1) $parts) "/") }}
 
+            {{ if ne $part $.Site.Language.Lang }}
             {{ if $isLast }}
             / <a class="text-decoration-none text-steel" href="/{{ $currentPath }}">
                 {{ $.Title }}
@@ -20,6 +21,7 @@
             / <a class="text-decoration-none text-muted" href="/{{ $currentPath }}">
                 {{ humanize $part }}
             </a>
+            {{ end }}
             {{ end }}
 
             {{ end }}

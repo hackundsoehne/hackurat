@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-blood">
     <div class="container">
-        <a class="navbar-brand" href="{{ .Site.Params.header.logo.url }}">
+        <a class="navbar-brand" href="{{ .Site.Params.header.logo.url | relLangURL }}">
             {{ $logo_alt := .Site.Params.header.logo.alt }}
             {{ $logo_src := .Site.Params.header.logo.src }}
             {{ $logo_height := .Site.Params.header.logo.height }}
@@ -20,7 +20,7 @@
                 {{ $active = or $active (eq $.Section (lower .Name)) }}
                 <li class="nav-item">
                     {{ $text := print .Name | safeHTML }}
-                    <a class="nav-link fs-5 {{ if $active }}active{{ end }}" href="{{ .URL }}">{{ $text }}</a>
+                    <a class="nav-link fs-5 {{ if $active }}active{{ end }}" href="{{ .URL | relLangURL }}">{{ $text }}</a>
                 </li>
                 {{ end }}
             </ul>
