@@ -17,7 +17,7 @@
     </div>
 </div>
 
-<div>
+<div class="overflow-hidden">
     {{ .Content }}
 </div>
 
@@ -31,6 +31,27 @@
             {{ range $events }}
             <div class="col">
                 {{ partial "event-card.html" . }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<div class="py-5">
+    <div class="container overflow-hidden">
+        <h3 class="display-6 text-center mb-5">Partners &amp; Sponsors</h3>
+        <div class="row g-5 row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center">
+            {{ $partners := .Site.Data.partners.partners }}
+
+            {{ range $partners }}
+            {{ $logo := resources.Get .logo }}
+
+            <div class="col text-center">
+                <div class="mx-3">
+                    <a href="{{ .url }}" target="_blank">
+                        <img class="img-fluid" alt="{{ .name }}" src="{{ $logo.RelPermalink }}" />
+                    </a>
+                </div>
             </div>
             {{ end }}
         </div>
