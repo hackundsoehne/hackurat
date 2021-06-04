@@ -1,0 +1,10 @@
+<div class="card h-100">
+    <a href="{{ .RelPermalink }}">
+        {{ $image := resources.Get .Params.image }}
+        <img class="card-img-top" alt="{{ .Title }}" src="{{ $image.RelPermalink }}" />
+    </a>
+    <div class="card-body text-center flex-grow-0 mt-auto">
+        <h3 class="card-title text-blood">{{ .Title }}</h3>
+        <p class="card-text">{{ .Date.Format "Jan 2, 2006" }}</p>
+    </div>
+</div>

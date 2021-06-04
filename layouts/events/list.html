@@ -6,15 +6,7 @@
         {{ range .Pages.ByPublishDate.Reverse }}
 
         <div class="col">
-            <div class="card h-100">
-                <a href="{{ .RelPermalink }}">
-                    <img class="card-img-top" alt="" src="{{ .Params.image }}" />
-                </a>
-                <div class="card-body text-center flex-grow-0 mt-auto">
-                    <h3 class="card-title text-blood">{{ .Title }}</h3>
-                    <p class="card-text">{{ .Date.Format "Jan 2, 2006" }}</p>
-                </div>
-            </div>
+            {{ partial "event-card.html" . }}
         </div>
 
         {{ end }}
