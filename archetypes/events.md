@@ -1,7 +1,8 @@
 ---
+translationKey: "events-{{ (now.Format "2006-01-02") }}"
 title: "{{ replace .Name "-" " " | title }}"
-featured_image: "{{ print "img/" (now.Format "2006-01-02") ".jpg" }}"
+image: "{{ print "events/" (now.Format "2006-01-02") ".jpg" }}"
 date: {{ .Date }}
 where: ""
-draft: true
+draft: false
 ---
