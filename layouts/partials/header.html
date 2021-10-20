@@ -20,24 +20,25 @@
                 {{ $active = or $active (eq $.Section (lower .Name)) }}
                 <li class="nav-item">
                     {{ $text := print .Name | safeHTML }}
-                    <a class="nav-link fs-5 {{ if $active }}active{{ end }}" href="{{ .URL | relLangURL }}">{{ $text }}</a>
+                    <a class="nav-link fs-5 {{ if $active }}active{{ end }}" href="{{ .URL | relLangURL }}">{{ $text
+                        }}</a>
                 </li>
                 {{ end }}
-
-                {{ if .IsTranslated }}
-                <div class="dropdown ms-0 ms-lg-3">
-                    <button class="btn btn-bones btn-sm dropdown-toggle" type="button" id="languageSelectorButton"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ .Site.Language.LanguageName }}
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="languageSelectorButton">
-                        {{ range .Translations }}
-                        <li><a class="dropdown-item" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
-                        {{ end }}
-                    </ul>
-                </div>
-                {{ end }}
             </ul>
+
+            {{ if .IsTranslated }}
+            <div class="dropdown ms-0 ms-lg-3">
+                <button class="btn btn-bones btn-sm dropdown-toggle" type="button" id="languageSelectorButton"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ .Site.Language.LanguageName }}
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="languageSelectorButton">
+                    {{ range .Translations }}
+                    <li><a class="dropdown-item" href="{{ .Permalink }}">{{ .Language.LanguageName }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
+            {{ end }}
         </div>
     </div>
 </nav>
