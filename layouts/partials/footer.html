@@ -6,7 +6,7 @@
 
         <div class="nav justify-content-center">
             {{ range .Site.Params.social_menu }}
-            <a class="nav-link" href="{{ .URL }}" target="_blank">
+            <a class="nav-link" href="{{ .url }}" target="_blank">
                 {{ $path := print "icons/" .icon ".svg" }}
                 <div class="text-muted">
                     {{ partial $path (dict "size" "24")}}
