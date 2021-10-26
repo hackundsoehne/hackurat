@@ -1,0 +1,108 @@
+baseURL: "https://example.com/"
+title: "Example Title"
+theme: "hackurat"
+
+params:
+  address:
+    line1: "Beispiel Organisation"
+    line2: "Musterstraße 42"
+    line3: "76064 Karlsruhe, Germany"
+
+  header:
+    logo:
+      url: "/"
+      alt: "Example Org"
+      src: "/logos/logo_white.png"
+      height: 60
+
+  social_menu:
+    - icon: "facebook"
+      url: "https://facebook.com"
+    - icon: "twitter"
+      url: "https://twitter.com"
+    - icon: "github"
+      url: "https://github.com"
+    - icon: "instagram"
+      url: "https://instagram.com"
+    - icon: "youtube"
+      url: "https://youtube.com"
+    - icon: "linkedin"
+      url: "https://linkedin.com"
+
+defaultContentLanguage: de
+languages:
+  de:
+    weight: 1
+    languageCode: "de"
+    languageName: "🇩🇪 Deutsch"
+    footer:
+      organisation: "Beispiel Organisation"
+      slogan: "Mach die Welt zu einem besseren Ort"
+    menu:
+      header:
+        - name: "Startseite"
+          url: "/"
+          weight: 1
+        - name: "Events"
+          url: "/events/"
+          weight: 2
+        - name: "Team"
+          url: "/team/"
+          weight: 3
+        - name: "Dienste"
+          url: "/services/"
+          weight: 4
+        - name: "Kontakt"
+          url: "/contact/"
+          weight: 5
+      footer:
+        - name: "Über uns"
+          url: "/"
+          weight: 1
+        - name: "Kontact"
+          url: "/contact/"
+          weight: 2
+        - name: "Impressum"
+          url: "/imprint/"
+          weight: 3
+        - name: "Datenschutz"
+          url: "/privacy/"
+          weight: 4
+
+  en:
+    weight: 2
+    languageCode: "en"
+    languageName: "🇺🇸 English"
+    footer:
+      organisation: "Example Organisation"
+      slogan: "Make the world a better place"
+    menu:
+      header:
+        - name: "Home"
+          url: "/"
+          weight: 1
+        - name: "Events"
+          url: "/events/"
+          weight: 2
+        - name: "Team"
+          url: "/team/"
+          weight: 3
+        - name: "Services"
+          url: "/services/"
+          weight: 4
+        - name: "Contact"
+          url: "/contact/"
+          weight: 5
+      footer:
+        - name: "About"
+          url: "/"
+          weight: 1
+        - name: "Contact"
+          url: "/contact/"
+          weight: 2
+        - name: "Imprint"
+          url: "/imprint/"
+          weight: 3
+        - name: "Privacy"
+          url: "/privacy/"
+          weight: 4

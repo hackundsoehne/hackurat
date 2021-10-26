@@ -1,0 +1,9 @@
+team:
+  - name: Max Mustermann
+    image: "team/max.jpg"
+    url: "https://example.com"
+    active: false
+  - name: Erika Musterfrau
+    image: "team/erika.jpg"
+    url: "https://example.com"
+    active: true
