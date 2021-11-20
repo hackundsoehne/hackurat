@@ -28,6 +28,8 @@ params:
       url: "https://youtube.com"
     - icon: "linkedin"
       url: "https://linkedin.com"
+    - icon: "mail"
+      url: "https://mailchimp.com"
 
 defaultContentLanguage: de
 languages:
